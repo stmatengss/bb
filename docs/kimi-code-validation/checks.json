@@ -1,0 +1,74 @@
+{
+  "repository": "https://github.com/get-bb/bb",
+  "baselineCommit": "a6fff60f53c615a109103075328bf7017431e792",
+  "commit": "9a7f4e520cf9518e76f62ed18fc3190b9481d19d",
+  "branch": "codex/kimi-code",
+  "patchAppliesToBaseline": true,
+  "checks": {
+    "providerAcpPlugin": {
+      "files": 9,
+      "passed": 95
+    },
+    "acpBridge": {
+      "files": 25,
+      "passed": 554,
+      "skipped": 4
+    },
+    "templates": {
+      "files": 6,
+      "passed": 46
+    },
+    "selectedServerIntegration": {
+      "files": 5,
+      "passed": 95
+    },
+    "totalPassed": 790,
+    "totalSkipped": 4,
+    "typecheck": [
+      "bb-plugin-provider-acp",
+      "@bb/provider-bridge-acp",
+      "@bb/templates",
+      "@bb/server"
+    ],
+    "lint": [
+      "bb-plugin-provider-acp",
+      "@bb/provider-bridge-acp",
+      "changed server tests"
+    ],
+    "acpBundledBuild": "passed",
+    "changedFileFormatting": "passed",
+    "diffCheck": "passed",
+    "sourceNulCheck": {
+      "passed": true,
+      "trackedFiles": 8060
+    },
+    "providerLiteralRatchet": "passed",
+    "repositoryWideFormatting": {
+      "passed": false,
+      "preexistingUnchangedFailures": 208,
+      "changedFilesAmongFailures": 0
+    },
+    "precommit": "No pre-commit configuration found; relevant repository checks were run."
+  },
+  "bundledHostSha256": "0be00c32add9dc769d17034bc558baf41de7583bbd8d8982a2ebe6936a5a5e8f",
+  "realCliSmoke": {
+    "summary": "runtime-result.json",
+    "reproducer": "smoke.mjs",
+    "passed": true,
+    "assertions": 12,
+    "consecutivePassingRunsAfterCloseFix": 4,
+    "remoteModelCallsPerRun": 0
+  },
+  "notValidated": [
+    "Live model inference",
+    "Full bb UI",
+    "Hosted CI",
+    "Windows/Linux execution"
+  ],
+  "limitations": [
+    "Kimi fork disabled because its ACP fork ignores requested cwd and MCP overrides.",
+    "Legacy Python Kimi CLI skill roots are not included; targets npm Kimi Code CLI 2 or later.",
+    "Native skill indexing reads host daemon environment, independently of custom launch env overrides."
+  ],
+  "reportPurpose": "Local verification of implementation commit; not hosted CI or live model inference."
+}

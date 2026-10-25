@@ -1,0 +1,44 @@
+{
+  "startedAt": "2026-10-25T06:47:18.381Z",
+  "finishedAt": "2026-10-25T06:47:20.379Z",
+  "versions": {
+    "kimi": "2.2.0",
+    "acpSdk": "1.7.0",
+    "node": "v24.18.0"
+  },
+  "source": {
+    "baselineCommit": "a6fff60f53c615a109103075328bf7017431e792",
+    "dirty": true,
+    "bridgePath": "packages/provider-bridge-acp/src/bridge/bridge.ts",
+    "bridgeSha256": "2fe301c0e67433c6c7e42962f39e3f310307104ff680d33ecdf423f843469296"
+  },
+  "fixture": {
+    "provider": "Deterministic local OpenAI-compatible mock on 127.0.0.1",
+    "kimiConfiguredPermissionMode": "yolo",
+    "bbPermissionMode": "accept-edits"
+  },
+  "passed": true,
+  "assertions": {
+    "textReceivedThroughBbBridge": true,
+    "denialReachedBbRuntime": true,
+    "deniedMarkerAbsent": true,
+    "approvalReachedBbRuntime": true,
+    "allowedMarkerPresent": true,
+    "sameSessionResumed": true,
+    "nonemptyHistorySurvivesBbResume": true,
+    "resumePreserves_initialAssistantResponse": true,
+    "resumePreserves_deniedTurnAssistantResponse": true,
+    "resumePreserves_allowedTurnAssistantResponse": true,
+    "resumePreserves_deniedToolResult": true,
+    "resumePreserves_allowedToolResult": true
+  },
+  "counts": {
+    "localHttpRequests": 6,
+    "remoteModelCalls": 0,
+    "approvalRequests": 2
+  },
+  "limitations": [
+    "Uses actual BB ACP bridge worker, Kimi CLI and SDK with deterministic localhost model responses; no paid inference or UI launch.",
+    "Only harmless marker-file shell commands in an isolated temporary workspace were requested."
+  ]
+}
